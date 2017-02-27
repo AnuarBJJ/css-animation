@@ -1,0 +1,84 @@
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 62.5%;
+}
+
+body{
+  font-size: 1.6rem;
+  font-family: sans-serif;
+  color: white;
+  background: #050404;
+}
+
+a{
+  text-decoration: none;
+}
+
+/* --------------------
+
+Tooltip
+
+-------------------------*/
+
+section{
+  width: 100%;
+  height: 100vh;
+  display: table;
+}
+
+section .center{
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.trigger {
+  position: relative;
+  background: #893168;
+  display: inline-block;
+  width: 200px;
+  height: 60px;
+  border-radius: 50em;
+  box-shadow: 0 2px 20px rgba(0,0,0,.7), inset 0 1px 0 rgba(255, 255, 255, .2);
+  color: white;
+}
+
+span, em, i{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+
+}
+
+ span{
+  /*overflow: hidden;*/
+ }
+
+ em{
+  transition: top .3s;
+ }
+
+ i {
+  transition: top .3s;
+ }
+
+ em{
+  line-height: 60px;
+ }
+
+ i{
+  top: 100%;
+  background: url("cd01-chapter-02/project-files-02/img/icon-download.svg") no-repeat center center;
+ }
+
+ .trigger:hover em{
+  top: -100%;
+ }
+
+ .trigger:hover i{
+  top: 0;
+}
