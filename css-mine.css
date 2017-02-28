@@ -55,15 +55,11 @@ span, em, i{
 }
 
  span{
-  /*overflow: hidden;*/
+  overflow: hidden;
  }
 
- em{
-  transition: top .3s;
- }
-
- i {
-  transition: top .3s;
+ em, i{
+  -webkit-transition: top .3s;
  }
 
  em{
@@ -72,7 +68,7 @@ span, em, i{
 
  i{
   top: 100%;
-  background: url("cd01-chapter-02/project-files-02/img/icon-download.svg") no-repeat center center;
+  background: url("img/icon-download.svg") no-repeat center center;
  }
 
  .trigger:hover em{
@@ -81,4 +77,43 @@ span, em, i{
 
  .trigger:hover i{
   top: 0;
+}
+
+.trigger::before, .trigger::after {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .5s;
+}
+
+.trigger::before{
+  content: "File Size: 10M";
+  width: 140px;
+  height: 60px;
+  line-height: 60px;
+  bottom: 90px;
+  background: #2E1C2B;
+  border-radius: .25em;
+  left: calc(50% - 70px)
+}
+.trigger::after{
+  content: '';
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-top-color: #2E1C2B;
+  left: calc(50% - 10px);
+  bottom: 70px;
+}
+
+.trigger:hover::before,
+.trigger:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+.trigger:hover::before{
+  bottom: 80px;
+}
+.trigger:hover::after{
+  bottom: 60px;
 }
