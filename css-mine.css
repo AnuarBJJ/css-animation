@@ -59,10 +59,12 @@ span, em, i{
  }
 
  em, i{
-  -webkit-transition: top .3s;
+  display: inline-block;
+  transition: top .3s;
  }
 
  em{
+  top: 0;
   line-height: 60px;
  }
 
